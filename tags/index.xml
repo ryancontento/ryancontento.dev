@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Ryan Contento Blog</title>
+    <link>http://ryancontento.dev/tags/</link>
+    <description>Recent content in Tags on Ryan Contento Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Apr 2022 11:33:58 -0400</lastBuildDate><atom:link href="http://ryancontento.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>untagged</title>
+      <link>http://ryancontento.dev/tags/untagged/</link>
+      <pubDate>Sun, 24 Apr 2022 11:33:58 -0400</pubDate>
+      
+      <guid>http://ryancontento.dev/tags/untagged/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
