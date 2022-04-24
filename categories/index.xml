@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Ryan Contento Blog</title>
-    <link>https://ryancontento.github.io/ryancontento.dev/categories/</link>
+    <link>https://ryancontento.dev/categories/</link>
     <description>Recent content in Categories on Ryan Contento Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://ryancontento.github.io/ryancontento.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://ryancontento.dev/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
