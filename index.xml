@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ryan Contento Blog</title>
-    <link>https://ryancontento.dev/posts/</link>
+    <link>https://ryancontento.dev/</link>
     <description>Recent content on Ryan Contento Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2020 copyright text.</copyright>
-    <lastBuildDate>Sun, 24 Apr 2022 11:33:58 -0400</lastBuildDate><atom:link href="https://ryancontento.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 11:33:58 -0400</lastBuildDate><atom:link href="https://ryancontento.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Testing Post</title>
-      <link>https://ryancontento.dev/posts/posts/testpost/</link>
+      <link>https://ryancontento.dev/posts/testpost/</link>
       <pubDate>Sun, 24 Apr 2022 11:33:58 -0400</pubDate>
       
-      <guid>https://ryancontento.dev/posts/posts/testpost/</guid>
+      <guid>https://ryancontento.dev/posts/testpost/</guid>
       <description>This is some content quick addition for testing more Code snippet test:
 public string Test() { return &amp;#34;this is a test&amp;#34;; } </description>
     </item>

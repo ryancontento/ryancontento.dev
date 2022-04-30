@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Ryan Contento Blog</title>
-    <link>https://ryancontento.dev/posts/categories/</link>
+    <link>https://ryancontento.dev/categories/</link>
     <description>Recent content in Categories on Ryan Contento Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2020 copyright text.</copyright><atom:link href="https://ryancontento.dev/posts/categories/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2020 copyright text.</copyright><atom:link href="https://ryancontento.dev/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
