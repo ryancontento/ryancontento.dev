@@ -1,6 +1,6 @@
 #TODO
 
-- [] Fix dropdown on blog page.
+- [x] Fix dropdown on blog page.
 - [] remove all lorem ipsum
 - [] Update social links.
 - [] Get projects on portfolio.
