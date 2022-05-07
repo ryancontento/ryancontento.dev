@@ -5,4 +5,5 @@
 - [] Update social links.
 - [] Get projects on portfolio.
 - [] Get a post on blog
-- [] update links across my other socials
+- [] Update links across my other socials
+- [] New logo
