@@ -3,36 +3,45 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ryancontento.dev/tags/.net/</loc>
-    <lastmod>2022-07-03T21:58:06-04:00</lastmod>
+    <lastmod>2022-07-04T18:13:24-04:00</lastmod>
   </url><url>
     <loc>https://ryancontento.dev/tags/blazor/</loc>
-    <lastmod>2022-07-03T21:58:06-04:00</lastmod>
+    <lastmod>2022-07-04T18:13:24-04:00</lastmod>
   </url><url>
     <loc>https://ryancontento.dev/categories/blazor/</loc>
-    <lastmod>2022-07-03T21:58:06-04:00</lastmod>
+    <lastmod>2022-07-04T18:13:24-04:00</lastmod>
+  </url><url>
+    <loc>https://ryancontento.dev/posts/blazor-component-lifecycle/</loc>
+    <lastmod>2022-07-04T18:13:24-04:00</lastmod>
   </url><url>
     <loc>https://ryancontento.dev/tags/c#/</loc>
-    <lastmod>2022-07-03T21:58:06-04:00</lastmod>
+    <lastmod>2022-07-04T18:13:24-04:00</lastmod>
   </url><url>
     <loc>https://ryancontento.dev/categories/</loc>
-    <lastmod>2022-07-03T21:58:06-04:00</lastmod>
+    <lastmod>2022-07-04T18:13:24-04:00</lastmod>
+  </url><url>
+    <loc>https://ryancontento.dev/tags/component/</loc>
+    <lastmod>2022-07-04T18:13:24-04:00</lastmod>
   </url><url>
     <loc>https://ryancontento.dev/categories/development/</loc>
-    <lastmod>2022-07-03T21:58:06-04:00</lastmod>
+    <lastmod>2022-07-04T18:13:24-04:00</lastmod>
+  </url><url>
+    <loc>https://ryancontento.dev/tags/lifecycle/</loc>
+    <lastmod>2022-07-04T18:13:24-04:00</lastmod>
+  </url><url>
+    <loc>https://ryancontento.dev/posts/</loc>
+    <lastmod>2022-07-04T18:13:24-04:00</lastmod>
+  </url><url>
+    <loc>https://ryancontento.dev/</loc>
+    <lastmod>2022-07-04T18:13:24-04:00</lastmod>
+  </url><url>
+    <loc>https://ryancontento.dev/tags/</loc>
+    <lastmod>2022-07-04T18:13:24-04:00</lastmod>
   </url><url>
     <loc>https://ryancontento.dev/tags/intro/</loc>
     <lastmod>2022-07-03T21:58:06-04:00</lastmod>
   </url><url>
     <loc>https://ryancontento.dev/posts/introduction-to-blazor/</loc>
-    <lastmod>2022-07-03T21:58:06-04:00</lastmod>
-  </url><url>
-    <loc>https://ryancontento.dev/posts/</loc>
-    <lastmod>2022-07-03T21:58:06-04:00</lastmod>
-  </url><url>
-    <loc>https://ryancontento.dev/</loc>
-    <lastmod>2022-07-03T21:58:06-04:00</lastmod>
-  </url><url>
-    <loc>https://ryancontento.dev/tags/</loc>
     <lastmod>2022-07-03T21:58:06-04:00</lastmod>
   </url>
 </urlset>

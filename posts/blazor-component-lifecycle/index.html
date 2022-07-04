@@ -50,9 +50,21 @@
     <div class="row justify-content-center text-center my-5">
       <div class="col-lg-10">
         
+        <a
+          href="https://ryancontento.dev/categories/blazor/"
+          class="d-inline-block link-cta mb-4 text-uppercase"
+          >Blazor</a
+        >
+        
+        <a
+          href="https://ryancontento.dev/categories/development/"
+          class="d-inline-block link-cta mb-4 text-uppercase"
+          >Development</a
+        >
+        
         <h1 class="mb-4 text-center">Blazor Component Lifecycle</h1>
         <p class="small mb-5 text-center">
-          <span class="text-uppercase">July 3, 2022</span>
+          <span class="text-uppercase">July 4, 2022</span>
         </p>
       </div>
     </div>
@@ -62,10 +74,80 @@
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <article class="pb-2">
-            <h2 id="test">test</h2>
+            <p>Blazor is a component based framework, and like all of these modern frameworks, every component has a lifecycle. They are rendered, they exist in the UI, and eventually are disposed. There are 7 main methods that handle the lifecycle of a Blazor/razor component, and one other that will need to be mentioned. These components are processed with a set of synchronous and asynchronous methods. All Blazor lifecycle methods are provided by the ComponentBase class. All components inherit from this class. For the methods other than the first one we will cover, the synchronous version is always called before the asynchronous one.</p>
+<h2 id="setparametersasync">SetParametersAsync()</h2>
+<p>The first method that is called once the parent component of a component is rendered is the SetParametersAsync() method. This is where the process always starts. This method is the only one that requires us to call the base method. If you fail to do so, the component will not load. The base method does two things for us:</p>
+<ul>
+<li>Sets the values for any parameters the component defines.</li>
+<li>Calls the correct life cycle methods.</li>
+</ul>
+<p>As the name suggests, this will set the parameters and cascading parameters for the components via the ParameterView object passed from the parent component.</p>
+<p>Unlike the other lifecycle methods, SetParametersAsync() is <strong>always</strong> asynchronous. The following two methods are very closely related to both this initial method and each other.</p>
+<h2 id="oninitializedasync">OnInitialized{Async}()</h2>
+<p>OnInitialized() and OnInitializedAsync() are the methods called following SetParametersAsync() <strong>if</strong> the component is being executed for the first time. This method will only run once in the lifecycle of a component. This is very similar to the constructor of a C# class.</p>
+<h2 id="onparameterssetasync">OnParametersSet{Async}()</h2>
+<p>The OnParametersSet() or OnParametersSetAsync() methods are called following SetParametersAsync(). This method, unlike OnInitialized, will run each time the incoming parameters of a component change.</p>
+<p>OnParametersSet() will run and <strong>then</strong> calls OnParametersSetAsync(). It will then make a call to StateHasChanged() (more on that later).</p>
+<h2 id="onafterrenderasync">OnAfterRender{Async}()</h2>
+<p>Again, as the name clearly suggests, these methods are called after a component has finished rendering. All elements and references for a component will be rendered at this point of the lifecycle.</p>
+<h2 id="more-on-async-calls">More on Async Calls</h2>
+<p>When making an asynchronous call in Blazor multiple awaited calls will fire simultaneously. Lets look at a quick example.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>List&lt;<span style="color:#66d9ef">string</span>&gt; <span style="color:#ae81ff">_</span>helloWorldList = <span style="color:#66d9ef">new</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">async</span> Task OnInitializedAsync()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">_</span>helloWorldList.Add(<span style="color:#e6db74">&#34;hello&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">await</span> Task.Delay(<span style="color:#ae81ff">2000</span>);
+</span></span><span style="display:flex;"><span>	  <span style="color:#ae81ff">_</span>helloWorldList.Add(<span style="color:#e6db74">&#34; World&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">await</span> Task.Delay(<span style="color:#ae81ff">2000</span>);
+</span></span><span style="display:flex;"><span>	  <span style="color:#ae81ff">_</span>helloWorldList.Add(<span style="color:#e6db74">&#34;!&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This example shows a list of strings with 3 items being added. If you were to watch this output, you will see that first “hello” will print, then 2 seconds later, both “ World” and “!” will print. It is understandable if you would have expected each await to complete before moving on to the next await, but that is not the case.</p>
+<p>This leads us nicely into the final method we will go over in this post. If we were to want the state of the component this example list is part of, we would need to call the StateHasChanged() method after each append to the list.</p>
+<h2 id="statehaschanged">StateHasChanged()</h2>
+<p>The final method we need to mention is StateHasChanged(). This method will notify the render tree that the state of the component has changed. This method call is usually handled by the other lifecycle methods, but I have come across a handful of situations where an explicit call of StateHasChanged() was needed.</p>
+<h2 id="bonus-method-dispose">Bonus Method: Dispose()</h2>
+<p>The Dispose() method is not needed very often, and is not one of the main lifecycle methods of a component. Dispose() does not inherit from ComponentBase like the other methods we have covered. This method is used to clean up resources, just like in any other C# application. This method is worth mentioning because if your component subscribes to an event you must use Dispose() before the component is destroyed. Failing to do so will cause a memory leak.</p>
+<p>In order to access this method, the component will need to implement the IDisposable interface. Doing this will allow Blazor to handle the remaining work for us.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>This was far from a comprehensive breakdown of the component lifecycle, but I hope this helps clear up the basics. These life cycle methods are vital to effectively creating components that work flawlessly together. If you have any questions, comments, or requests for covering specifics, please feel free to reach out <a href="%5Bhttps://ryancontento.dev/#contact%5D(https://ryancontento.dev/#contact)">here</a>.</p>
 
             <p class="mt-5 text-center">
+              
+              <span class="text-secondary">Tagged: </span>
                
+              <a
+                href="https://ryancontento.dev/tags/.net/"
+                class="link-tag text-dark"
+                >#.NET</a
+              >
+              
+              <a
+                href="https://ryancontento.dev/tags/blazor/"
+                class="link-tag text-dark"
+                >#Blazor</a
+              >
+              
+              <a
+                href="https://ryancontento.dev/tags/c/"
+                class="link-tag text-dark"
+                >#C#</a
+              >
+              
+              <a
+                href="https://ryancontento.dev/tags/component/"
+                class="link-tag text-dark"
+                >#Component</a
+              >
+              
+              <a
+                href="https://ryancontento.dev/tags/lifecycle/"
+                class="link-tag text-dark"
+                >#Lifecycle</a
+              >
+              
             </p>
           </article>
           <div class="row pt-5 pb-5">
