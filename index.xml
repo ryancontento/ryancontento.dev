@@ -24,7 +24,7 @@
       
       <guid>https://ryancontento.dev/posts/introduction-to-blazor/</guid>
       <description>Blazor is Microsofts latest SPA (Single Page Application) framework. Blazor is open source and cross platform. If you love C#, .NET MVC, or just new and interesting frameworks, Blazor may be for you.
-What’s WebAssembly? WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications. [source: webassembly.</description>
+What’s WebAssembly? WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications. source: webassembly.</description>
     </item>
     
   </channel>
