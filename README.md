@@ -4,6 +4,6 @@
 - [x] remove all lorem ipsum
 - [x] Update social links.
 - [x] Get projects on portfolio.
-- [] Get a post on blog
+- [x] Get a post on blog
 - [] Update links across my other socials
 - [] New logo

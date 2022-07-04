@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>Ryan Contento</title>
+    
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    
+    <link rel="icon" type="image/png" href="img/favicon.ico" />
+
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    
+    <link rel="stylesheet" href="/css/style.sea.css" id="theme-stylesheet" />
+    
+    
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Belleza&display=swap"
+      rel="stylesheet"
+    />
+
+    
+    <script
+      src="https://kit.fontawesome.com/5db21ba9c6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body></body>
+</html>
+
+<main id="main">
+  <div class="container">
+    <div class="row justify-content-center text-center my-5">
+      <div class="col-lg-10">
+        
+        <h1 class="mb-4 text-center">Introduction to Blazor</h1>
+        <p class="small mb-5 text-center">
+          <span class="text-uppercase">July 3, 2022</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="bg-skew bg-skew-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <article class="pb-2">
+            <p>Blazor is Microsofts latest SPA (Single Page Application) framework. Blazor is <a href="%5Bhttps://github.com/dotnet/aspnetcore/tree/main/src/Components%5D(https://github.com/dotnet/aspnetcore/tree/main/src/Components)">open source</a> and cross platform. If you love C#, .NET MVC, or just new and interesting frameworks, Blazor may be for you.</p>
+<h2 id="whats-webassembly">What’s WebAssembly?</h2>
+<p>WebAssembly (abbreviated <em>Wasm</em>) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications. [source: <a href="https://webassembly.org/">webassembly.org/</a>](&lt;<a href="https://webassembly.org/">https://webassembly.org/</a>&gt;)</p>
+<p>Support of WASM is growing quickly and is supported on Safari, Firefox, and all Chromium based browsers.</p>
+<p>WebAssembly is supported by the W3C just like JavaScript, and is here to stay. This is very exciting for a wide range of languages, but we’re here to talk about the implications for C#.</p>
+<h3 id="what-are-the-benefits">What Are the Benefits?</h3>
+<ul>
+<li>Can leverage previous experience with C#.</li>
+<li>Leverage the existing .NET ecosystem**.**</li>
+<li>Allows you to share app logic across server and client.</li>
+<li>Still has the ability to utilize JavaScript when needed.</li>
+</ul>
+<h3 id="what-are-the-drawbacks">What Are the Drawbacks?</h3>
+<ul>
+<li>Can not fully manipulate the DOM like JavaScript (as of time of writing).</li>
+<li>Long initial load time.</li>
+</ul>
+<h2 id="components">Components</h2>
+<p>Like most modern front-end web frameworks, Blazor is built around the concept of UI components. Components in Blazor are elements of UI, such as a pages, dialog boxes, or forms. If you have any experience with .NET MVC, you will instantly recognize a Blazor component (.razor page). That’s correct, just like in MVC, we are using razor pages. This means you have access to all of the power of Razor when building out your entire UI. For those uninitiated with razor, you may be familiar with its JavaScript cousin JSX. Instead of JavaScript, with razor we are writing HTML and C# in the same file. Before Blazor, this was only possible when done on the server, but now we can have all of this done right in the clients browser.</p>
+<h2 id="blazor-wasm-vs-blazor-server">Blazor WASM VS Blazor Server</h2>
+<p>This is a concept best covered in its own post, but it is worth noting that there are two main hosting options when making a Blazor application. Blazor WASM, the option I personally always choose, is the true full client side WebAssembly app. Blazor WASM will still need to work with an API to do things such as CRUD operations with a database, but on it can run on its own hosted as static files too. Blazor Server uses <a href="%5Bhttps://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?view=aspnetcore-6.0%5D(https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?view=aspnetcore-6.0)">SignalR</a> and the server will be handling UI updates. That is where I will leave this topic for now, but there is plenty of information in the Microsoft documentation.</p>
+<h2 id="javascript-interoperability">JavaScript Interoperability</h2>
+<p>While I noted that one of the drawbacks of Blazor is that it does not have full access to the DOM, you still have access to using JavaScript in these situations via JavaScript interop. If you are doing very JavaScript, this can be worked out by simply creating a file with the logic and linking on the index.html file in the wwwroot of the project. When combining C# and JavaScript logic, there are a number of rules that must be followed. This is something we will dive into deeper in another future post.</p>
+<h2 id="final-notes">Final Notes</h2>
+<p>This is just the first of many posts on this awesome framework. I will be getting into some specific tutorials and deeper dives on specific topics in the future. If you have any requests for covering specifics, please feel free to reach out <a href="%5Bhttps://ryancontento.dev/#contact%5D(https://ryancontento.dev/#contact)">here</a>.</p>
+
+            <p class="mt-5 text-center">
+              
+              <span class="text-secondary">Tagged: </span>
+               
+              <a
+                href="https://ryancontento.dev/tags/untagged/"
+                class="link-tag text-dark"
+                >#untagged</a
+              >
+              
+            </p>
+          </article>
+          <div class="row pt-5 pb-5">
+            <div class="col-6 text-left">
+              
+            </div>
+            <div class="col-6 text-right">
+              
+              <a class="text-reset" href="https://ryancontento.dev/posts/blazor-component-lifecycle/"
+                >Blazor Component Lifecycle &rarr;</a
+              >
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+    
+    <footer class="pt-5">
+      <div class="container text-center py-5">
+        <div class="row px-4">
+          <div class="col-lg-7 mx-auto">
+            <h2 class="text-uppercase mb-0">Ryan Contento</h2>
+            <h6 class="text-primary text-uppercase mb-0 letter-spacing-3">
+              Software Developer
+            </h6>
+            <p class="text-muted my-4">
+              Wilmington, North Carolina            
+            </p>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a class="social-link" target="_blank" href="https://github.com/ryancontento"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a class="social-link" target="_blank" href="https://www.linkedin.com/in/ryancontento/"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a class="social-link" target="_blank" href="https://twitter.com/contentoryan"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights px-4">
+        <div class="container py-4 border-top text-center">
+          <p class="mb-0 text-muted py-2">
+            &copy; Ryan Contento - Software Developer
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+    type="text/javascript"
+    src="/bundle.min.a2c5b062c87998f04d1b5dfb6a89a1b2d79786c21d0cb63a05e8a2082984b64b77d80955e3b97eab17273775162ba372511b711fea2f7608f216e68a67bb22d6.js"
+    integrity="sha512-osWwYsh5mPBNG137aomhsteXhsIdDLY6BeiiCCmEtkt32AlV47l&#43;qxcnN3UWK6NyURtxH&#43;ovdgjyFuaKZ7si1g=="
+  ></script>
+    
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/front.js"></script>
+    
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+
+</body>
+</html>
