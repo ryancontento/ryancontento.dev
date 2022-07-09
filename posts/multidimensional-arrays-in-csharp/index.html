@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>Ryan Contento</title>
+    
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    
+    <link rel="icon" type="image/png" href="img/favicon.ico" />
+
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    
+    <link rel="stylesheet" href="/css/style.sea.css" id="theme-stylesheet" />
+    
+    
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Belleza&display=swap"
+      rel="stylesheet"
+    />
+
+    
+    <script
+      src="https://kit.fontawesome.com/5db21ba9c6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body></body>
+</html>
+
+<main id="main">
+  <div class="container">
+    <div class="row justify-content-center text-center my-5">
+      <div class="col-lg-10">
+        
+        <a
+          href="https://ryancontento.dev/categories/c/"
+          class="d-inline-block link-cta mb-4 text-uppercase"
+          >C#</a
+        >
+        
+        <a
+          href="https://ryancontento.dev/categories/development/"
+          class="d-inline-block link-cta mb-4 text-uppercase"
+          >Development</a
+        >
+        
+        <h1 class="mb-4 text-center">Multidimensional Arrays in C#</h1>
+        <p class="small mb-5 text-center">
+          <span class="text-uppercase">July 9, 2022</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="bg-skew bg-skew-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <article class="pb-2">
+            <h2 id="what-are-multidimensional-arrays">What Are Multidimensional Arrays?</h2>
+<p>A multidimensional array is an array of arrays. This means it will have multiple levels. This is also commonly called a matrix or table. In this article, we will be going over how to implement a simple 2D array in C# and some other options for taking this technique a bit further!</p>
+<h2 id="2d-arrays">2D Arrays</h2>
+<p>Here are 3 standard arrays of strings:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">string</span>[] fruit = {<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>, <span style="color:#e6db74">&#34;peach&#34;</span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">string</span>[] vegetable = {<span style="color:#e6db74">&#34;peas&#34;</span>, <span style="color:#e6db74">&#34;kale&#34;</span>, <span style="color:#e6db74">&#34;carrot&#34;</span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">string</span>[] meat = {<span style="color:#e6db74">&#34;chicken&#34;</span>, <span style="color:#e6db74">&#34;beef&#34;</span>, <span style="color:#e6db74">&#34;lamb&#34;</span>}
+</span></span></code></pre></div><p>Now, what if we wanted to combine these foods into one large array? Using 2D arrays, we can combine the 3 standard arrays into one array of string, lets call it refrigerator:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">string</span>[,] refrigerator = { {<span style="color:#e6db74">&#34;apple&#34;</span>, <span style="color:#e6db74">&#34;banana&#34;</span>, <span style="color:#e6db74">&#34;peach&#34;</span>},
+</span></span><span style="display:flex;"><span>							{<span style="color:#e6db74">&#34;peas&#34;</span>, <span style="color:#e6db74">&#34;kale&#34;</span>, <span style="color:#e6db74">&#34;carrot&#34;</span>},
+</span></span><span style="display:flex;"><span>							{<span style="color:#e6db74">&#34;chicken&#34;</span>, <span style="color:#e6db74">&#34;beef&#34;</span>, <span style="color:#e6db74">&#34;lamb&#34;</span>}
+</span></span><span style="display:flex;"><span>						};
+</span></span></code></pre></div><p>It is already becoming clear how this can be useful for tables.</p>
+<p>To access one of the elements, just provide the index for the row and column. Our fruit array is now row index 0, our vegetable array is now index 1, and our meat array is now index 2. Inside of each of these, the items follow the same pattern, 0-2.</p>
+<p>Let’s say we want to access the carrots from out refrigerator. We will need to do the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>refrigerator[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>];
+</span></span></code></pre></div><p>We can use this to change what is in our refrigerator. Maybe we want to replace our kale with some spinach:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>refrigerator[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>] = <span style="color:#e6db74">&#34;spinach&#34;</span>
+</span></span></code></pre></div><p>If we want to check what is now in our refrigerator, we can just loop over it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span>(<span style="color:#66d9ef">string</span> food <span style="color:#66d9ef">in</span> refrigerator)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	Console.WriteLine(food);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>To demonstrate how useful this can be for tables, we will print this to the console with the correct rows and columns. We can do this by nesting two for loops:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// First loop is for the first dimension array</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; refrigerator.GetLength(<span style="color:#ae81ff">0</span>); i++)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Second loop for second dimension</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j = <span style="color:#ae81ff">0</span>; j &lt; refrigerator.GetLength(<span style="color:#ae81ff">1</span>); j++)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// Note, we will use Console.Write inside the loop to keep the same line,</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// and we add an empty string to separate them.</span>
+</span></span><span style="display:flex;"><span>		Console.Write(refrigerator[i,j] + <span style="color:#e6db74">&#34; &#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// We then print an empty new line to break for the new row</span>
+</span></span><span style="display:flex;"><span>	Console.WriteLine();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="3d-arrays">3D Arrays</h2>
+<p>As you might have guessed, we can take this further than one array of arrays. What about a 3D array? Well, let’s take a look at an example of an array which will consist of an array, and inside of each of those, will be another set of arrays. To keep this one a bit clearer we will just be using arrays of integers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span>[,,] threeDArray = { { {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>}, {<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>}, {<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>} },
+</span></span><span style="display:flex;"><span>						{ {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>}, {<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>}, {<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>} },
+</span></span><span style="display:flex;"><span>						{ {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>}, {<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>}, {<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>} }
+</span></span><span style="display:flex;"><span>					  };
+</span></span></code></pre></div><p>To access one of the ints, we will be using the same technique as above, but with an additional index for the new array. If we want to change the middle rows middle array of “4, 5, 6” to “4, 5, 5”, we will simply do:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>threeDArray[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>] = <span style="color:#ae81ff">5</span>;
+</span></span></code></pre></div><p>In the future I may make another post expanding on these topics to populate an HTML table. If you have any questions, comments, or requests for covering specifics, please feel free to reach out <a href="%5Bhttps://ryancontento.dev/#contact%5D(https://ryancontento.dev/#contact)">here</a>.</p>
+
+            <p class="mt-5 text-center">
+              
+              <span class="text-secondary">Tagged: </span>
+               
+              <a
+                href="https://ryancontento.dev/tags/.net/"
+                class="link-tag text-dark"
+                >#.NET</a
+              >
+              
+              <a
+                href="https://ryancontento.dev/tags/c/"
+                class="link-tag text-dark"
+                >#C#</a
+              >
+              
+              <a
+                href="https://ryancontento.dev/tags/arrays/"
+                class="link-tag text-dark"
+                >#Arrays</a
+              >
+              
+            </p>
+          </article>
+          <div class="row pt-5 pb-5">
+            <div class="col-6 text-left">
+              
+              <a class="text-reset" href="https://ryancontento.dev/posts/blazor-component-lifecycle/"
+                >&larr; Blazor Component Lifecycle</a
+              >
+              
+            </div>
+            <div class="col-6 text-right">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+    
+    <footer class="pt-5">
+      <div class="container text-center py-5">
+        <div class="row px-4">
+          <div class="col-lg-7 mx-auto">
+            <h2 class="text-uppercase mb-0">Ryan Contento</h2>
+            <h6 class="text-primary text-uppercase mb-0 letter-spacing-3">
+              Software Developer
+            </h6>
+            <p class="text-muted my-4">
+              Wilmington, North Carolina            
+            </p>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a class="social-link" target="_blank" href="https://github.com/ryancontento"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a class="social-link" target="_blank" href="https://www.linkedin.com/in/ryancontento/"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a class="social-link" target="_blank" href="https://twitter.com/contentoryan"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights px-4">
+        <div class="container py-4 border-top text-center">
+          <p class="mb-0 text-muted py-2">
+            &copy; Ryan Contento - Software Developer
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script
+    type="text/javascript"
+    src="/bundle.min.a2c5b062c87998f04d1b5dfb6a89a1b2d79786c21d0cb63a05e8a2082984b64b77d80955e3b97eab17273775162ba372511b711fea2f7608f216e68a67bb22d6.js"
+    integrity="sha512-osWwYsh5mPBNG137aomhsteXhsIdDLY6BeiiCCmEtkt32AlV47l&#43;qxcnN3UWK6NyURtxH&#43;ovdgjyFuaKZ7si1g=="
+  ></script>
+    
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/front.js"></script>
+    
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C# on Ryan Contento Blog</title>
+    <link>https://ryancontento.dev/categories/c#/</link>
+    <description>Recent content in C# on Ryan Contento Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2020 copyright text.</copyright>
+    <lastBuildDate>Sat, 09 Jul 2022 14:05:58 -0400</lastBuildDate><atom:link href="https://ryancontento.dev/categories/c#/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Multidimensional Arrays in C#</title>
+      <link>https://ryancontento.dev/posts/multidimensional-arrays-in-csharp/</link>
+      <pubDate>Sat, 09 Jul 2022 14:05:58 -0400</pubDate>
+      
+      <guid>https://ryancontento.dev/posts/multidimensional-arrays-in-csharp/</guid>
+      <description>What Are Multidimensional Arrays? A multidimensional array is an array of arrays. This means it will have multiple levels. This is also commonly called a matrix or table. In this article, we will be going over how to implement a simple 2D array in C# and some other options for taking this technique a bit further!
+2D Arrays Here are 3 standard arrays of strings:
+ string[] fruit = {&amp;#34;apple&amp;#34;, &amp;#34;banana&amp;#34;, &amp;#34;peach&amp;#34;} string[] vegetable = {&amp;#34;peas&amp;#34;, &amp;#34;kale&amp;#34;, &amp;#34;carrot&amp;#34;} string[] meat = {&amp;#34;chicken&amp;#34;, &amp;#34;beef&amp;#34;, &amp;#34;lamb&amp;#34;} Now, what if we wanted to combine these foods into one large array?</description>
+    </item>
+    
+  </channel>
+</rss>
