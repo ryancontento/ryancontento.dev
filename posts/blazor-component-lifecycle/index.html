@@ -92,19 +92,19 @@
 <p>Again, as the name clearly suggests, these methods are called after a component has finished rendering. All elements and references for a component will be rendered at this point of the lifecycle.</p>
 <h2 id="more-on-async-calls">More on Async Calls</h2>
 <p>When making an asynchronous call in Blazor, multiple awaited calls will fire simultaneously. Lets look at a quick example.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>List&lt;<span style="color:#66d9ef">string</span>&gt; <span style="color:#ae81ff">_</span>helloWorldList = <span style="color:#66d9ef">new</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">async</span> Task OnInitializedAsync()
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">_</span>helloWorldList.Add(<span style="color:#e6db74">&#34;hello&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">await</span> Task.Delay(<span style="color:#ae81ff">2000</span>);
-</span></span><span style="display:flex;"><span>	  <span style="color:#ae81ff">_</span>helloWorldList.Add(<span style="color:#e6db74">&#34; World&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">await</span> Task.Delay(<span style="color:#ae81ff">2000</span>);
-</span></span><span style="display:flex;"><span>	  <span style="color:#ae81ff">_</span>helloWorldList.Add(<span style="color:#e6db74">&#34;!&#34;</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>This example shows a list of strings with 3 items being added. If you were to watch this output, you will see that first “hello” will print, then 2 seconds later, both “ World” and “!” will print. It is understandable if you would have expected each await to complete before moving on to the next await, but that is not the case.</p>
+<pre tabindex="0"><code>List&lt;string&gt; _helloWorldList = new();
+
+protected override async Task OnInitializedAsync()
+{
+		_helloWorldList.Add(&#34;hello&#34;);
+
+		await Task.Delay(2000);
+	  _helloWorldList.Add(&#34; World&#34;);
+
+		await Task.Delay(2000);
+	  _helloWorldList.Add(&#34;!&#34;);
+}
+</code></pre><p>This example shows a list of strings with 3 items being added. If you were to watch this output, you will see that first “hello” will print, then 2 seconds later, both “ World” and “!” will print. It is understandable if you would have expected each await to complete before moving on to the next await, but that is not the case.</p>
 <h2 id="statehaschanged">StateHasChanged()</h2>
 <p>The final lifecycle method we need to mention is StateHasChanged(). This method will notify the render tree that the state of the component has changed. This method call is usually handled by the other lifecycle methods, but I have come across a handful of situations where an explicit call of StateHasChanged() was needed.</p>
 <h2 id="bonus-method-dispose">Bonus Method: Dispose()</h2>
